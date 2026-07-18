@@ -1,0 +1,58 @@
+{
+  "name": "idb-migrate",
+  "version": "0.1.0",
+  "description": "Tiny, zero-dependency declarative migration framework for IndexedDB: versioned, ordered migrations with a recorded log, safe rollback, and dry-run planning.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "test": "npm run build && node --test \"test/**/*.test.mjs\"",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "indexeddb",
+    "idb",
+    "migration",
+    "migrations",
+    "schema",
+    "database",
+    "upgrade",
+    "onupgradeneeded",
+    "versionchange",
+    "browser",
+    "offline-first"
+  ],
+  "license": "MIT",
+  "author": "browser-storage.com",
+  "homepage": "https://github.com/browser-storage-com/idb-migrate#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/browser-storage-com/idb-migrate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/browser-storage-com/idb-migrate/issues"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "^6.0.0",
+    "typescript": "^5.5.0"
+  }
+}
